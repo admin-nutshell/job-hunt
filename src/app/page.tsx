@@ -89,7 +89,7 @@ export default async function DashboardPage() {
   const total = applications.length;
 
   return (
-    <div className="p-6 min-h-full">
+    <div className="p-4 md:p-6 min-h-full">
       {/* Client island: heading + "+ Add" button + modal */}
       <KanbanHeader />
 
@@ -109,13 +109,13 @@ export default async function DashboardPage() {
       )}
 
       {/* Kanban board */}
-      <div className="flex gap-4 overflow-x-auto pb-6">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-4 overflow-x-auto pb-6">
         {COLUMNS.map((col) => {
           const cards = grouped[col.status] ?? [];
           return (
             <div
               key={col.status}
-              className={`kanban-col shrink-0 w-64 flex flex-col rounded-xl border-t-2 bg-gray-900/50 ${col.color}`}
+              className={`kanban-col shrink-0 w-full md:w-64 flex flex-col rounded-xl border-t-2 bg-gray-900/50 ${col.color}`}
             >
               {/* Column header */}
               <div className="flex items-center justify-between px-3 py-3 border-b border-gray-800/60">

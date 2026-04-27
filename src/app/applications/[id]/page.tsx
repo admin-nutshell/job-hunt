@@ -59,7 +59,7 @@ export default async function ApplicationDetailPage({
   const initial = application.company.charAt(0).toUpperCase();
 
   return (
-    <div className="p-6 min-h-full">
+    <div className="p-4 md:p-6 min-h-full">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-gray-500 mb-6">
         <Link href="/" className="hover:text-gray-300 transition-colors">Dashboard</Link>
@@ -68,7 +68,7 @@ export default async function ApplicationDetailPage({
       </nav>
 
       {/* ── Application Header ── */}
-      <div className="flex items-start gap-5 mb-8 bg-gray-900 border border-gray-800 rounded-xl p-6">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 mb-8 bg-gray-900 border border-gray-800 rounded-xl p-5 sm:p-6 text-center sm:text-left">
         {/* Avatar */}
         <div className="w-14 h-14 rounded-xl bg-blue-600 flex items-center justify-center shrink-0 shadow-lg shadow-blue-600/20">
           <span className="text-white text-2xl font-bold">{initial}</span>
@@ -120,7 +120,7 @@ export default async function ApplicationDetailPage({
       </div>
 
       {/* ── Two-column layout ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 items-start">
         {/* Left 2/3 */}
         <div className="lg:col-span-2">
           <ApplicationTabs

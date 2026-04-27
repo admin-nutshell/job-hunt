@@ -85,11 +85,11 @@ export default function AddApplicationModal({ onClose }: Props) {
   return (
     /* Backdrop */
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop bg-black/60"
+      className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-4 modal-backdrop bg-black/60"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       {/* Panel */}
-      <div className="modal-enter w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-gray-900 border border-gray-700/60 rounded-2xl shadow-2xl">
+      <div className="modal-enter w-full max-w-2xl h-full md:h-auto md:max-h-[90vh] overflow-y-auto bg-gray-900 border-x-0 md:border border-gray-700/60 rounded-t-2xl md:rounded-2xl shadow-2xl">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-800">
           <div>
@@ -108,9 +108,9 @@ export default function AddApplicationModal({ onClose }: Props) {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="px-6 py-5 space-y-5">
+        <form onSubmit={handleSubmit} className="px-6 py-5 space-y-6">
           {/* Row: Company + Role */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label htmlFor="company" className={labelCls}>Company *</label>
               <input
@@ -138,7 +138,7 @@ export default function AddApplicationModal({ onClose }: Props) {
           </div>
 
           {/* Row: Status + Work Type */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label htmlFor="status" className={labelCls}>Status</label>
               <select id="status" value={form.status} onChange={set("status")} className={inputCls}>
@@ -158,7 +158,7 @@ export default function AddApplicationModal({ onClose }: Props) {
           </div>
 
           {/* Row: Location + Job URL */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label htmlFor="location" className={labelCls}>Location</label>
               <input
@@ -184,7 +184,7 @@ export default function AddApplicationModal({ onClose }: Props) {
           </div>
 
           {/* Row: Salary */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             <div>
               <label htmlFor="salary_min" className={labelCls}>Salary Min</label>
               <input
@@ -259,7 +259,7 @@ export default function AddApplicationModal({ onClose }: Props) {
           )}
 
           {/* Actions */}
-          <div className="flex items-center justify-end gap-3 pt-1">
+          <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-3 pt-4 pb-10 md:pb-0">
             <button
               type="button"
               onClick={onClose}

@@ -66,7 +66,7 @@ export default function SidebarNav() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-60 shrink-0 flex flex-col h-full bg-gray-900 border-r border-gray-800">
+    <aside className="hidden md:flex w-60 shrink-0 flex-col h-full bg-gray-900 border-r border-gray-800">
       {/* Brand */}
       <div className="px-6 py-5 border-b border-gray-800">
         <div className="flex items-center gap-2.5">

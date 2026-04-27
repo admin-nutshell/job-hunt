@@ -321,15 +321,15 @@ export default function JobSearch() {
   }
 
   return (
-    <div className="p-6 min-h-full">
+    <div className="p-4 md:p-6 min-h-full">
       {/* ── Search Panel ── */}
       <form
         onSubmit={search}
-        className="bg-gray-900 border border-gray-800 rounded-xl p-5 mb-6"
+        className="bg-gray-900 border border-gray-800 rounded-xl p-4 md:p-5 mb-6"
       >
-        <div className="flex flex-wrap gap-3 items-end">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-3 items-stretch md:items-end">
           {/* Keywords */}
-          <div className="flex-1 min-w-48">
+          <div className="flex-1">
             <label className="block text-xs font-medium text-gray-400 mb-1.5">
               Keywords
             </label>
@@ -338,12 +338,12 @@ export default function JobSearch() {
               value={form.keywords}
               onChange={(e) => setForm((p) => ({ ...p, keywords: e.target.value }))}
               placeholder="Senior Project Manager"
-              className={inp}
+              className={`${inp} py-2.5 md:py-2`}
             />
           </div>
 
           {/* Location */}
-          <div className="flex-1 min-w-40">
+          <div className="flex-1">
             <label className="block text-xs font-medium text-gray-400 mb-1.5">
               Location
             </label>
@@ -351,19 +351,19 @@ export default function JobSearch() {
               value={form.location}
               onChange={(e) => setForm((p) => ({ ...p, location: e.target.value }))}
               placeholder="Calgary, AB"
-              className={inp}
+              className={`${inp} py-2.5 md:py-2`}
             />
           </div>
 
           {/* Job Type */}
-          <div className="w-40">
+          <div className="flex-1 md:w-40">
             <label className="block text-xs font-medium text-gray-400 mb-1.5">
               Job Type
             </label>
             <select
               value={form.jobType}
               onChange={(e) => setForm((p) => ({ ...p, jobType: e.target.value }))}
-              className={`${inp} [color-scheme:dark]`}
+              className={`${inp} py-2.5 md:py-2 [color-scheme:dark]`}
             >
               <option value="">Any</option>
               <option value="Full-time">Full-time</option>
@@ -373,14 +373,14 @@ export default function JobSearch() {
           </div>
 
           {/* Domain */}
-          <div className="w-44">
+          <div className="flex-1 md:w-44">
             <label className="block text-xs font-medium text-gray-400 mb-1.5">
               Domain
             </label>
             <select
               value={form.domain}
               onChange={(e) => setForm((p) => ({ ...p, domain: e.target.value }))}
-              className={`${inp} [color-scheme:dark]`}
+              className={`${inp} py-2.5 md:py-2 [color-scheme:dark]`}
             >
               <option value="All">All Industries</option>
               <option value="Construction">Construction</option>
@@ -394,7 +394,7 @@ export default function JobSearch() {
           <button
             type="submit"
             disabled={loading}
-            className="flex items-center gap-2 px-5 py-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-blue-600/20 shrink-0"
+            className="flex items-center justify-center gap-2 px-5 py-3 md:py-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-blue-600/20 shrink-0"
           >
             {loading ? (
               <>
