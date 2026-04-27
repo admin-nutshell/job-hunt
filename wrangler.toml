@@ -15,6 +15,3 @@ database_id = "ff2452b6-e964-455c-9764-3d3d2869d22e"
 [ai]
 binding = "AI"
 
-[vars]
-GOOGLE_SEARCH_API_KEY = ""
-GOOGLE_SEARCH_ENGINE_ID = ""
