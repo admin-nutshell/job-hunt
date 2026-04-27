@@ -32,10 +32,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const query = `${keywords} ${domain !== "All" ? domain : ""} jobs`.trim();
-    const fullLocation = location ? location : "Calgary, Alberta, Canada";
-
-    const url = `https://serpapi.com/search.json?engine=google_jobs&q=${encodeURIComponent(query)}&location=${encodeURIComponent(fullLocation)}&api_key=${apiKey}&hl=en&gl=ca`;
+    const query = `${keywords} ${domain !== "All" ? domain : ""} jobs in ${location || "Calgary Alberta"}`.trim();
+    const url = `https://serpapi.com/search.json?engine=google_jobs&q=${encodeURIComponent(query)}&api_key=${apiKey}&hl=en&gl=ca`;
 
     const response = await fetch(url);
     const data = await response.json() as any;
