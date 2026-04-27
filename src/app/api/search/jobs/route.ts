@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -101,8 +102,9 @@ export async function POST(request: Request) {
       );
     }
 
-    const apiKey = process.env.GOOGLE_SEARCH_API_KEY;
-    const cx = process.env.GOOGLE_SEARCH_ENGINE_ID;
+    const { env } = getCloudflareContext();
+    const apiKey = env.GOOGLE_SEARCH_API_KEY;
+    const cx = env.GOOGLE_SEARCH_ENGINE_ID;
 
     if (!apiKey || !cx) {
       return NextResponse.json(

@@ -138,11 +138,8 @@ export type NewCoverLetter = Omit<CoverLetter, "id" | "created_at">;
 export type UpdateCoverLetter = Partial<Pick<CoverLetter, "content" | "approved">> & { id: number };
 
 // ------------------------------------------------------------
-// Cloudflare Workers Env  (populated by wrangler bindings)
-// For full typing run: npm run cf-typegen
+// Cloudflare Workers Env (populated by wrangler bindings)
+// The interface is defined globally in cloudflare-env.d.ts
 // ------------------------------------------------------------
 
-export interface Env {
-  JOB_HUNT_DB: D1Database;
-  AI: Ai;
-}
+export type Env = CloudflareEnv;
