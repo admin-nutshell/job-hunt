@@ -7,4 +7,5 @@ interface CloudflareEnv {
   APP_PASSWORD: string;
   GOOGLE_SEARCH_API_KEY: string;
   GOOGLE_SEARCH_ENGINE_ID: string;
+  SERPAPI_KEY: string;
 }

@@ -7,8 +7,8 @@ export async function GET() {
     return NextResponse.json({
       hasApiKey: !!env.GOOGLE_SEARCH_API_KEY,
       hasEngineId: !!env.GOOGLE_SEARCH_ENGINE_ID,
-      apiKeyLength: env.GOOGLE_SEARCH_API_KEY?.length ?? 0,
-      engineIdLength: env.GOOGLE_SEARCH_ENGINE_ID?.length ?? 0,
+      hasSerpApi: !!env.SERPAPI_KEY,
+      serpApiLength: env.SERPAPI_KEY?.length ?? 0,
     });
   } catch (error: any) {
     return NextResponse.json({ error: error.message });
