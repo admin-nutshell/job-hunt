@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     const url = `https://serpapi.com/search.json?engine=google_jobs&q=${encodeURIComponent(query)}&location=${encodeURIComponent(fullLocation)}&api_key=${apiKey}&hl=en&gl=ca`;
 
     const response = await fetch(url);
-    const data = await response.json();
+    const data = await response.json() as any;
 
     if (data.error) {
       return NextResponse.json({ error: data.error }, { status: 500 });
