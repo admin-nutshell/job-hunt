@@ -1,6 +1,15 @@
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { NextResponse } from "next/server";
 
+export interface JobResult {
+  title: string;
+  company: string;
+  location: string;
+  snippet: string;
+  url: string;
+  source: string;
+}
+
 export async function POST(request: Request) {
   try {
     const { env } = getCloudflareContext();
