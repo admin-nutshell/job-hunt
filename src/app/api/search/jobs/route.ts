@@ -13,7 +13,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const { keywords, location, domain } = await request.json();
+    const body = await request.json() as { keywords: string; location: string; domain: string };
+    const { keywords, location, domain } = body;
 
     if (!keywords?.trim()) {
       return NextResponse.json(
